@@ -14,7 +14,7 @@ Rails/Laravelで甘やかされすぎてユーザー認証=しんどいを忘れ
 ### 他
 
 * [apiについて](https://qiita.com/piacere_ex/items/50d847170291c41fef64)
-* [graphqlについて(https://qiita.com/piacere_ex/items/b4f57b55663403f9ec8e)
+* [graphqlについて](https://qiita.com/piacere_ex/items/b4f57b55663403f9ec8e)
 
 ### routesを表示する
 
