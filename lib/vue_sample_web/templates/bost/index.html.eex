@@ -1,0 +1,28 @@
+<h1>Listing Bosts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for bost <- @bosts do %>
+    <tr>
+      <td><%= bost.title %></td>
+      <td><%= bost.body %></td>
+
+      <td>
+        <%= link "Show", to: Routes.bost_path(@conn, :show, bost) %>
+        <%= link "Edit", to: Routes.bost_path(@conn, :edit, bost) %>
+        <%= link "Delete", to: Routes.bost_path(@conn, :delete, bost), method: :delete, data: [confirm: "Are you sure?"] %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Bost", to: Routes.bost_path(@conn, :new) %></span>

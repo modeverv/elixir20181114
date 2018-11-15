@@ -18,7 +18,15 @@ defmodule VueSampleWeb.Router do
 
     get "/", PageController, :index
     resources "/posts", PostController, except: [:new,:edit]
+		resources "/bosts", BostController
   end
+
+	scope "/api" do
+		pipe_through :api
+		forward "/graphql", Absinthe.Plug.GraphQL, schema: VueSampleWeb.Schema
+		forward "/", Absinthe.Plug, schema: VueSampleWeb.Schema
+	end
+
 
   # Other scopes may use custom stacks.
   # scope "/api", VueSampleWeb do

@@ -1,0 +1,5 @@
+<h1>Edit Bost</h1>
+
+<%= render "form.html", Map.put(assigns, :action, Routes.bost_path(@conn, :update, @bost)) %>
+
+<span><%= link "Back", to: Routes.bost_path(@conn, :index) %></span>
