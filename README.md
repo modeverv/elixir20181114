@@ -100,6 +100,7 @@ cd assets && webpack --mode production && cd ..
 mix phx.digest
 
 # Custom tasks (like DB migrations)
+MIX_ENV=prod mix ecto.create
 MIX_ENV=prod mix ecto.migrate
 
 # Finally run the server
