@@ -6,10 +6,20 @@
 
 ## TODO
 
+## routesみる
+
+```
+mix phx.routes
+```
+
 ### ユーザー認証 
 
-[qiitaの記事](https://www.one-tab.com/page/pTy8f1UfQS2k2eHBHGiSWg)
+[qiitaの記事たち](https://www.one-tab.com/page/pTy8f1UfQS2k2eHBHGiSWg)
 
+* ログイン・ログアウトのエンドポイントは作った感じ。
+* あとは認証が必要なページの作成とか
+
+Rails/Laravelで甘やかされすぎてユーザー認証=しんどいを忘れている。しんどい
 
 ### 静的ファイル
 

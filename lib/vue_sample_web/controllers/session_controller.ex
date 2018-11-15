@@ -17,4 +17,11 @@ defmodule VueSampleWeb.SessionController do
         |> render("error.json", message: "Could not login")
     end
   end
+
+	def logout(conn, %{}) do
+    conn
+    |> VueSample.Guardian.Plug.sign_out
+		|> put_status(200)
+    |> render("logout.json", message: "logged out")
+  end
 end

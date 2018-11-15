@@ -8,4 +8,8 @@ defmodule VueSampleWeb.SessionView do
   def render("error.json", %{message: msg}) do
     %{"error": msg}
   end
+
+  def render("logout.json", %{message: msg}) do
+    %{"ok": msg}
+  end
 end
