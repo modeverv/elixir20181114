@@ -28,3 +28,7 @@ config :phoenix, :json_library, Jason
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env()}.exs"
+
+config :vue_sample, VueSample.Guardian,
+  issuer: "vue_sample",
+  secret_key: "0tjYImjIH1r2YEXgEFHeYq7p7iTjsX7oAXnblqGrGT9J/kj5LAE9Yjj6Ads1ZiN7"
