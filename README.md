@@ -1,25 +1,26 @@
-# VueSample
+# Elixir_20181114
 
-* api https://qiita.com/piacere_ex/items/50d847170291c41fef64
-* graphql https://qiita.com/piacere_ex/items/b4f57b55663403f9ec8e
+## Elixir楽しむぞい
 
-
-## TODO
-
-## routesみる
-
-```
-mix phx.routes
-```
-
-### ユーザー認証 
+### (TODO)ユーザー認証
 
 [qiitaの記事たち](https://www.one-tab.com/page/pTy8f1UfQS2k2eHBHGiSWg)
 
 * ログイン・ログアウトのエンドポイントは作った感じ。
 * あとは認証が必要なページの作成とか
 
-Rails/Laravelで甘やかされすぎてユーザー認証=しんどいを忘れている。しんどい
+Rails/Laravelで甘やかされすぎてユーザー認証=しんどいを忘れている。しんどいねぇ
+
+### 他
+
+* [apiについて](https://qiita.com/piacere_ex/items/50d847170291c41fef64)
+* [graphqlについて(https://qiita.com/piacere_ex/items/b4f57b55663403f9ec8e)
+
+### routesを表示する
+
+```bash
+mix phx.routes
+```
 
 ### 静的ファイル
 
@@ -28,14 +29,15 @@ Rails/Laravelで甘やかされすぎてユーザー認証=しんどいを忘れ
 ### belongs_toなど
 
 Railsでいうところのオールインワンな概念は無いのかな。  
-https://kazucocoa.wordpress.com/2015/07/24/elixirphoenixhas_one%E3%82%84belongs_to%E3%81%AE%E9%96%A2%E4%BF%82%E3%81%AB%E3%81%82%E3%82%8B%E3%83%A2%E3%83%87%E3%83%AB%E3%82%92%E3%80%81%E4%BB%96%E6%96%B9%E3%81%AE%E3%83%A2%E3%83%87%E3%83%AB/  
 否、あるっぽい
-https://stackoverflow.com/questions/34184571/how-to-get-the-belongs-to-association-with-ecto-in-elixir  
+* [記事1](https://kazucocoa.wordpress.com/2015/07/24/elixirphoenixhas_one%E3%82%84belongs_to%E3%81%AE%E9%96%A2%E4%BF%82%E3%81%AB%E3%81%82%E3%82%8B%E3%83%A2%E3%83%87%E3%83%AB%E3%82%92%E3%80%81%E4%BB%96%E6%96%B9%E3%81%AE%E3%83%A2%E3%83%87%E3%83%AB/)
+* [記事2](https://stackoverflow.com/questions/34184571/how-to-get-the-belongs-to-association-with-ecto-in-elixir)
 
 #### blongs_to
-https://hexdocs.pm/ecto/Ecto.Schema.html#belongs_to/3  
 
-```
+[公式](https://hexdocs.pm/ecto/Ecto.Schema.html#belongs_to/3)
+
+```elixir
 defmodule Comment do
   use Ecto.Schema
 
@@ -51,9 +53,9 @@ comment.post #=> %Post{...}
 
 #### has_many
 
-https://hexdocs.pm/ecto/Ecto.Schema.html#has_many/3  
+[公式](https://hexdocs.pm/ecto/Ecto.Schema.html#has_many/3)
 
-```
+```elixir
 defmodule Post do
   use Ecto.Schema
   schema "posts" do
@@ -72,10 +74,11 @@ post.comments #=> [%Comment{...}, ...]
 
 #### qiita
 
-https://qiita.com/yoavlt/items/ffbda1f0397839c5db99
+[記事1](https://qiita.com/yoavlt/items/ffbda1f0397839c5db99)
 
-この記事が良さそう
-https://qiita.com/techno-tanoC/items/c703a5a90e4133fbea82
+この記事が良さそう  
+  
+[記事2](https://qiita.com/techno-tanoC/items/c703a5a90e4133fbea82)
 
 ### バッチ
 
@@ -83,13 +86,14 @@ https://qiita.com/techno-tanoC/items/c703a5a90e4133fbea82
 GenServerを使ってバックグラウンドで実行する方法などが簡易かも
 Sidekiqっぽいのもあるらしい。必要になれば。
 sidekiqしんどいな。。
-https://medium.com/@cschneid/background-jobs-in-elixir-phoenix-60dddf4ce207
+[記事](https://medium.com/@cschneid/background-jobs-in-elixir-phoenix-60dddf4ce207)
 
 
 ### プロダクション起動
-https://hexdocs.pm/phoenix/deployment.html
 
-```
+[公式](https://hexdocs.pm/phoenix/deployment.html)
+
+```bash
 # Initial setup
 mix deps.get --only prod
 MIX_ENV=prod mix compile
