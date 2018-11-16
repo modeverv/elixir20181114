@@ -11,9 +11,10 @@ defmodule VueSample.Application do
       # Start the Ecto repository
       VueSample.Repo,
       # Start the endpoint when the application starts
-      VueSampleWeb.Endpoint
+      VueSampleWeb.Endpoint,
       # Starts a worker by calling: VueSample.Worker.start_link(arg)
       # {VueSample.Worker, arg},
+			{Guardian.DB.Token.SweeperServer,[]}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

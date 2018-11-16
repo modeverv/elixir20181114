@@ -13,12 +13,21 @@ defmodule VueSampleWeb.Router do
     plug :accepts, ["json"]
   end
 
+	pipeline :authenticated do    # (1)3行追加
+    plug VueSample.Guardian.AuthPipeline
+  end
+
   scope "/", VueSampleWeb do
     pipe_through :browser
 
     get "/", PageController, :index
     resources "/posts", PostController, except: [:new,:edit]
 		resources "/bosts", BostController
+		resources "/users", UserController
+
+		resources "/hsessions", HsessionController, only: [:create]
+    get "/login", HsessionController, :new     # 追加
+    get "/logout", HsessionController, :delete # 追加
   end
 
 # 	scope "/api/v1", VueSampleWeb do
@@ -33,10 +42,12 @@ defmodule VueSampleWeb.Router do
 	scope "/api" do
 		pipe_through :api
 		scope "/v1",VueSampleWeb do
-			post "/sign_in", SessionController, :sign_in
-			get "/logout", SessionController, :logout
+			post "/login", SessionController, :login
 			post "/users", UserController, :create
+			post "/logout", SessionController, :logout
+			post "/refresh_token", SessionController, :refresh_token
 			# ここにAuthenticated!的なこと書くと良さそう
+			pipe_through :authenticated
 			resources "/users", UserController, except: [:create, :new, :edit]
 		end
 		forward "/graphql", Absinthe.Plug.GraphQL, schema: VueSampleWeb.Schema

@@ -61,4 +61,9 @@ defmodule VueSample.Users.User do
         end
     end
   end
+
+	def get_user!(id) do
+    User
+    |> Repo.get!(id)
+  end
 end

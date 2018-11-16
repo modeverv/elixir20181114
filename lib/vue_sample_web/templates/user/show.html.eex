@@ -1,0 +1,18 @@
+<h1>Show Bost</h1>
+
+<ul>
+
+  <li>
+    <strong>Title:</strong>
+    <%= @bost.title %>
+  </li>
+
+  <li>
+    <strong>Body:</strong>
+    <%= @bost.body %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.bost_path(@conn, :edit, @bost) %></span>
+<span><%= link "Back", to: Routes.bost_path(@conn, :index) %></span>

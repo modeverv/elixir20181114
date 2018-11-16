@@ -1,0 +1,20 @@
+<div>
+  <%= if @current do %>
+    <div class="alert alert-danger">
+      <p> Already loggined ! : <%= @current.username %> </p>
+    </div>
+  <% end %>
+  <%= form_tag Routes.hsession_path(@conn, :create) do %>
+    <label>
+      E-Mail:<br />
+      <input type="text" name="email">
+    </label>
+    <br />
+    <label>
+      Password:<br />
+      <input type="password" name="password">
+    </label>
+    <br />
+    <%= submit "Login" %>
+  <% end %>
+</div>

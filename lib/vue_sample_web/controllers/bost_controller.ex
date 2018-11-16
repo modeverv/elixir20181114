@@ -4,6 +4,8 @@ defmodule VueSampleWeb.BostController do
   alias VueSample.Content
   alias VueSample.Content.Bost
 
+  plug VueSampleWeb.AuthPlug when action in [:index]
+
   def index(conn, _params) do
     bosts = Content.list_bosts()
     render(conn, "index.html", bosts: bosts)

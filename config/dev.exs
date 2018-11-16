@@ -9,6 +9,7 @@ use Mix.Config
 config :vue_sample, VueSampleWeb.Endpoint,
   http: [port: 4000],
   debug_errors: true,
+  url: [host: nil],
   code_reloader: true,
   check_origin: false,
   watchers: []

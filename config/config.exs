@@ -29,6 +29,11 @@ config :phoenix, :json_library, Jason
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env()}.exs"
 
+config :guardian, Guardian.DB,
+  repo: VueSample.Repo,
+  schema_name: "guardian_tokens",
+  sweep_interval: 60 # default: 60 minutes
+
 config :vue_sample, VueSample.Guardian,
   issuer: "vue_sample",
   secret_key: "0tjYImjIH1r2YEXgEFHeYq7p7iTjsX7oAXnblqGrGT9J/kj5LAE9Yjj6Ads1ZiN7"
