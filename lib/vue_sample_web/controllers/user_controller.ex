@@ -6,9 +6,12 @@ defmodule VueSampleWeb.UserController do
 
   action_fallback VueSampleWeb.FallbackController
 
-  def index(conn, _params) do
+  def index(conn, params) do
     users = Users.list_users()
-    render(conn, "index.json", users: users)
+		case conn.private[:phoenix_format] do
+			"html" -> render(conn, "index.html", users: users)
+			"json" -> render(conn, "index.json", users: users)
+		end
   end
 
   def create(conn, %{"user" => user_params}) do

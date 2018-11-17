@@ -2,6 +2,10 @@
 
 ## Elixir楽しむぞい
 
+### renderを切り替える
+
+
+
 ### ページング
 
 [rummage](https://medium.com/@aditya7iyengar/searching-sorting-and-pagination-in-elixir-phoenix-with-rummage-part-1-933106ec50ca) 
@@ -11,9 +15,9 @@
 [qiitaの記事たち](https://www.one-tab.com/page/pTy8f1UfQS2k2eHBHGiSWg)
 
 * JWTベースのログイン・ログアウトのエンドポイントは作った感じ。
+* GraphQLと同時にすれば良さそう
 
 [普通の認証やつ](https://qiita.com/sand/items/8e541f8a950ae6c63931)
-
 
 Rails/Laravelで甘やかされすぎてユーザー認証=しんどいを忘れている。しんどいねぇ
 
