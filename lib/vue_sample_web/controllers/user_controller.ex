@@ -8,6 +8,7 @@ defmodule VueSampleWeb.UserController do
 
   def index(conn, params) do
     users = Users.list_users()
+		# html / jsonでrender切り替える
 		case conn.private[:phoenix_format] do
 			"html" -> render(conn, "index.html", users: users)
 			"json" -> render(conn, "index.json", users: users)

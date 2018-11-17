@@ -38,7 +38,6 @@ defmodule VueSampleWeb.Router do
 # 		resources "/users", UserController, except: [:create, :new, :edit]
 # 	end
 
-
 	scope "/api" do
 		pipe_through :api
 		scope "/v1",VueSampleWeb do
